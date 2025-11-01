@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vishnu Kasotiya — Portfolio</title>
+  <meta name="description" content="Portfolio of Vishnu Kasotiya — Full‑stack web developer & creative coder." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071023 0%, #081224 60%);color:#e6eef6}
+    .wrap{max-width:var(--maxw);margin:40px auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .avatar{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    nav a:hover{color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:32px;margin-top:36px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:16px;padding:24px;box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.03)}
+
+    h1{margin:0;font-size:2.1rem}
+    p.lead{color:var(--muted);margin-top:10px;line-height:1.6}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#041323}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .profile-card{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+    .profile-card img{width:100%;border-radius:12px;display:block}
+    .counts{display:flex;gap:12px;margin-top:6px}
+    .count-item{background:var(--glass);padding:8px 12px;border-radius:10px;font-size:0.9rem;color:var(--muted)}
+
+    section{margin-top:28px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(11,18,32,0.6), rgba(6,8,14,0.4));border:1px solid rgba(255,255,255,0.03)}
+    .project h4{margin:0 0 8px 0}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:0.8rem;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted)}
+
+    .skills{display:flex;gap:10px;flex-wrap:wrap}
+    .skill{padding:8px 10px;border-radius:9px;background:rgba(255,255,255,0.02)}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:repeat(1,1fr)}
+      nav{display:none}
+    }
+
+    /* small animated accent */
+    .accent-line{height:4px;width:120px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#7c3aed);margin-top:8px}
+
+    /* simple floating animation */
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+    /* contact form */
+    form.contact{display:grid;gap:10px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    textarea{min-height:110px;resize:vertical}
+    .meta{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* subtle code block */
+    pre.code{background:#041627;padding:12px;border-radius:8px;color:#a8f0ff;overflow:auto}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="avatar">VK</div>
+        <div>
+          <div style="font-weight:700">Vishnu Kasotiya</div>
+          <div style="font-size:0.85rem;color:var(--muted)">Web Developer • Frontend & Full‑Stack</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="card">
+        <h1>Hello, I'm <span style="color:var(--accent)">Vishnu Kasotiya</span></h1>
+        <div class="accent-line"></div>
+        <p class="lead">I build fast, accessible and beautiful web experiences. I enjoy solving problems with clean code and creative UI. Currently exploring React, Node.js and design systems.</p>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="scrollToSection('projects')">See Projects</button>
+          <button class="btn btn-ghost" onclick="location.href='#contact'">Hire Me</button>
+        </div>
+
+        <section id="about" style="margin-top:18px">
+          <h3 style="margin:0">About me</h3>
+          <p class="lead" style="margin-top:8px">I'm a passionate web developer based in India — I create responsive websites and small full‑stack apps. I like clean design, fast performance and learning new stacks.</p>
+
+          <div style="display:flex;gap:10px;margin-top:12px;align-items:center;flex-wrap:wrap">
+            <div class="card" style="padding:12px;display:flex;gap:10px;align-items:center">
+              <div style="font-weight:700;font-size:1.2rem">2+</div>
+              <div style="color:var(--muted)">Years Experience</div>
+            </div>
+            <div class="card" style="padding:12px;display:flex;gap:10px;align-items:center">
+              <div style="font-weight:700;font-size:1.2rem">3</div>
+              <div style="color:var(--muted)">Projects</div>
+            </div>
+            <div class="card" style="padding:12px;display:flex;gap:10px;align-items:center">
+              <div style="font-weight:700;font-size:1.2rem">Available</div>
+              <div style="color:var(--muted)">For Freelance</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="card profile-card float">
+        <img src="vishnu.jpg" alt="profile"/>
+        <div style="font-weight:700">Vishnu Kasotiya</div>
+        <div style="color:var(--muted);font-size:0.95rem">Frontend Html , Css , JS  </div>
+        <div class="counts">
+          <div class="count-item">GitHub: vk‑dev</div>
+          <div class="count-item">Location: Jaipur, India</div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="projects">
+      <h2 style="margin:0 0 8px 0">Featured Projects</h2>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="project">
+          <h4>ShopKaro — E‑commerce UI</h4>
+          <div class="tags" style="margin-bottom:8px"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <p class="lead" style="margin:0">A modern responsively designed storefront with cart interactions and product filters.</p>
+          <div style="margin-top:10px"><a href="https://vishal26-carediter.github.io/e-commerce-project" target="_blank" style="color:var(--accent);text-decoration:none">Live E-Commerce</a> • <a href="#" style="color:var(--muted);text-decoration:none">Repository</a></div>
+        </div>
+
+        <div class="project">
+          <h4>CollegeConnect — College Website</h4>
+          <div class="tags" style="margin-bottom:8px"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <p class="lead" style="margin:0">Informational college website with course pages, faculty listing and events calendar.</p>
+          <div style="margin-top:10px"><a href="  https://vishal26-carediter.github.io/college-website" target="_blank" style="color:var(--accent);text-decoration:none">Live college-website</a> • <a href="#" style="color:var(--muted);text-decoration:none">Repository</a></div>
+        </div>
+
+        <div class="project">
+          <h4>TaskFlow — To‑Do List</h4>
+          <div class="tags" style="margin-bottom:8px"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <p class="lead" style="margin:0">Simple to‑do app with add/edit/delete, filters and localStorage persistence.</p>
+                    <div style="margin-top:10px"><a href=" https://vishal26-carediter.github.io/to-du-list" target="_blank" style="color:var(--accent);text-decoration:none">Live To Do List</a> • <a href="#" style="color:var(--muted);text-decoration:none">Repository</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 style="margin-top:18px">Skills & Tools</h2>
+      <div class="skills" style="margin-top:10px">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">Git & GitHub</div>
+        
+      </div>
+
+      <div style="margin-top:18px">
+        <h3>Quick code sample</h3>
+        <pre class="code">// Simple debounce helper
+function debounce(fn, ms=250){
+  let t;return (...args)=>{clearTimeout(t);t=setTimeout(()=>fn(...args),ms)}
+}
+        </pre>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 style="margin-top:18px">Contact</h2>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+        <div class="card">
+          <form class="contact" onsubmit="handleContact(event)">
+            <div class="meta">
+              <input id="name" placeholder="Your name" required />
+              <input id="email" placeholder="Email" type="email" required />
+            </div>
+            <input id="subject" placeholder="Subject" />
+            <textarea id="message" placeholder="Message" required></textarea>
+            <div style="display:flex;gap:10px;justify-content:flex-end">
+              <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h4 style="margin-top:0">Get in touch</h4>
+          <p class="lead">Email: <a href="mailto:hello@vishnukasotiya.dev" style="color:var(--accent);text-decoration:none">hello@vishnukasotiya.dev</a></p>
+          <p class="lead">GitHub: <a href="https://github.com/vk-dev" style="color:var(--accent);text-decoration:none">vk-dev</a></p>
+          <p class="lead">Location: Jaipur, India</p>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Vishnu Kasotiya — Built with ❤️ & JavaScript
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+    function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+
+    function handleContact(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const subject=document.getElementById('subject').value.trim();
+      const message=document.getElementById('message').value.trim();
+      if(!name||!email||!message){alert('Please fill required fields');return}
+      // For demo we open user's default mail client with prefilled content
+      const body=`Name: ${name}%0AEmail: ${email}%0A%0A${encodeURIComponent(message)}`;
+      window.location.href = `mailto:hello@vishnukasotiya.dev?subject=${encodeURIComponent(subject||'Contact from portfolio')}&body=${body}`
+    }
+  </script>
+</body>
+</html>
